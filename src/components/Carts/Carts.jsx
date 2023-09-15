@@ -10,7 +10,7 @@ const Carts = () => {
       .then((data) => setCarts(data));
   }, []);
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 lg:w-3/4 md:grid-cols-2 lg:grid-cols-3">
       {/* <h1>{carts.length}</h1> */}
       {carts.map((cart) => (
         <Cart key={cart.id} cart={cart}></Cart>
