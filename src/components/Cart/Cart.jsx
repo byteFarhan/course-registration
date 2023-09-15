@@ -1,12 +1,12 @@
 import { LuDollarSign } from "react-icons/lu";
 import { TfiBook } from "react-icons/tfi";
 import PropTypes from "prop-types";
-const Cart = ({ cart }) => {
-  console.log(cart);
+const Cart = ({ cart, handleSelectBtn }) => {
+  //   console.log(cart);
   const { title, price, description, credit, cover } = cart;
   return (
     <>
-      <div className="p-5 space-y-4 shadow bg-base-100">
+      <div className="p-5 space-y-4 bg-white rounded-lg hover:shadow">
         <img src={cover} alt={description} className="w-full" />
 
         <div className="">
@@ -26,7 +26,10 @@ const Cart = ({ cart }) => {
               <p className="mt-1 font-medium">Credit : {credit}hr</p>
             </div>
           </div>
-          <button className="w-full text-white transition-all delay-100 bg-blue-500 btn hover:bg-blue-600">
+          <button
+            onClick={() => handleSelectBtn(title)}
+            className="w-full text-white transition-all delay-100 bg-blue-500 btn hover:bg-blue-600"
+          >
             Select
           </button>
         </div>
@@ -37,6 +40,7 @@ const Cart = ({ cart }) => {
 
 Cart.propTypes = {
   cart: PropTypes.object.isRequired,
+  handleSelectBtn: PropTypes.func.isRequired,
 };
 export default Cart;
 
