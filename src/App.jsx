@@ -35,7 +35,7 @@ function App() {
         } else {
           setCredit(credit);
           setPrice(price);
-          toast("You have alrady selected this course!");
+          toast("You have already selected this course!");
         }
       }
       setEnrollments(uniceEnrollments);

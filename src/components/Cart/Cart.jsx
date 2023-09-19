@@ -5,12 +5,12 @@ const Cart = ({ cart, handleSelectBtn }) => {
   const { title, price, description, credit, cover } = cart;
   return (
     <>
-      <div className="p-5 space-y-4 bg-white rounded-lg hover:shadow">
+      <div className="flex flex-col p-5 space-y-4 bg-white rounded-lg hover:shadow">
         <img src={cover} alt={description} className="w-full" />
-        <div className="">
+        <div className="flex-growg">
           <h2 className="text-xl font-bold ">{title}</h2>
           <p className=" text-paragrap">{description}</p>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between ">
             <div className="flex items-center gap-5 ">
               <span className="text-2xl font-medium ">
                 <LuDollarSign />
@@ -24,13 +24,13 @@ const Cart = ({ cart, handleSelectBtn }) => {
               <p className="mt-1 font-medium">Credit : {credit}hr</p>
             </div>
           </div>
-          <button
-            onClick={() => handleSelectBtn(title, credit, price)}
-            className="w-full text-white transition-all delay-100 bg-blue-500 btn hover:bg-blue-600"
-          >
-            Select
-          </button>
         </div>
+        <button
+          onClick={() => handleSelectBtn(title, credit, price)}
+          className="w-full text-white transition-all delay-100 bg-blue-500 btn hover:bg-blue-600"
+        >
+          Select
+        </button>
       </div>
     </>
   );
